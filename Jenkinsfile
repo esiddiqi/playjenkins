@@ -4,7 +4,7 @@ pipeline {
     kubernetes {
       defaultContainer 'mynginx'
       yaml '''
-      apiVersion: v1
+        apiVersion: v1
         kind: Pod
         spec:
           containers:
@@ -18,7 +18,7 @@ pipeline {
       '''
     }
         
-        }
+  }
 
   stages {
 
