@@ -1,6 +1,24 @@
 pipeline {
 
-  agent { 'kubernetes' }
+  agent { 
+    kubernetes {
+      defaultContainer 'mynginx'
+      yaml '''
+      apiVersion: v1
+        kind: Pod
+        spec:
+          containers:
+          - name: mynginx
+            image: nginx
+            command:
+            - cat
+            tty: true
+        
+      
+      '''
+    }
+        
+        }
 
   stages {
 
